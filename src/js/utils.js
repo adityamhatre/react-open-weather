@@ -37,19 +37,19 @@ module.exports = {
   getLangs(lang) {
     return langText[lang] === undefined ? langText.en : langText[lang];
   },
-  getNextDays(tomorrow){  // Returns an array containing the next 4 days dates in format yyyy-mm-dd
+  getNextDays(tomorrow) {  // Returns an array containing the next 4 days dates in format yyyy-mm-dd
 
     var fourDates = [];
     //var tomorrow = new Date(); // initialized at today
     var tomorrow_formated = "";
 
     // Creating the 4 dates in the good format
-    for(var i=0; i<4; i++) {
+    for (var i = 0; i < 4; i++) {
       tomorrow.setDate(tomorrow.getDate() + 1);
-      tomorrow_formated = tomorrow.getFullYear() + "-" + ("0" + tomorrow.getMonth()+1).slice(-2) + "-" + ("0" + tomorrow.getDate()).slice(-2);
+      tomorrow_formated = tomorrow.getFullYear() + "-" + (tomorrow.getMonth() + 1) <= 9 ? "0" + (tomorrow.getMonth() + 1) : (tomorrow.getMonth() + 1) + "-" + (tomorrow.getDate()) <= 9 ? "0" + (tomorrow.getDate()) : (tomorrow.getDate())
       fourDates.push(tomorrow_formated);
     }
-    
+
     return fourDates;
   }
 };
