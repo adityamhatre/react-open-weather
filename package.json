@@ -53,6 +53,7 @@
     "webpack-dev-server": "~1.16.2"
   },
   "scripts": {
+    "prepare": "npm run build",
     "build": "./node_modules/webpack/bin/webpack.js --config webpack.config.build.js",
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --progress --colors --inline --config webpack.config.dev.js --port 8081",
     "test": "mocha test/*.spec.js --recursive",
