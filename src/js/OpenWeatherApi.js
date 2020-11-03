@@ -62,6 +62,7 @@ export default class OpenWeatherApi {
 
     var comingDays = utils.getNextDays(new Date());
     var daysMapped = [];
+    return daysMapped;
 
     // Getting data from each day
     for (var i=0; i<4; i++) {
